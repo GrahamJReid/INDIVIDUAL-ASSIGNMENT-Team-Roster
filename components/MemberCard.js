@@ -8,7 +8,7 @@ import { deleteMembers } from '../API/memberData';
 function MemberCard({ memberObj, onUpdate }) {
   // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
   // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
-  const deleteThisBook = () => {
+  const deleteThisMember = () => {
     if (window.confirm(`Delete ${memberObj.name}?`)) {
       deleteMembers(memberObj.firebaseKey).then(() => onUpdate());
     }
@@ -21,14 +21,14 @@ function MemberCard({ memberObj, onUpdate }) {
         <Card.Title>{memberObj.name}</Card.Title>
         <p>{memberObj.role}</p>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
-        <Link href={`/member/${memberObj.firebaseKey}`} passHref>
+        <Link href={`/${memberObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         <Link href={`/edit/${memberObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisBook} className="m-2">
+        <Button variant="danger" onClick={deleteThisMember} className="m-2">
           DELETE
         </Button>
       </Card.Body>

@@ -65,7 +65,6 @@ const getSingleMember = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve((data)))
     .catch(reject);
 });
-
 export {
   createMembers,
   getMembers,
