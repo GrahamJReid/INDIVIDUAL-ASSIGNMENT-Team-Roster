@@ -30,7 +30,7 @@ export default function MemberForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateMembers(formInput)
-        .then(() => router.push(`/team/${obj.firebaseKey}`));
+        .then(() => router.push('/team'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMembers(payload).then(({ name }) => {
