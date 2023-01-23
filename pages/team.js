@@ -8,7 +8,7 @@ const getFilteredItems = (query, members) => {
   if (!query) {
     return members;
   }
-  return members.filter((member) => member.name.toLowerCase().includes(query.toLowerCase()));
+  return members.filter((member) => member.name.toLowerCase().includes(query.toLowerCase()) || member.role.toLowerCase().includes(query.toLowerCase()));
 };
 
 export default function ShowMembers() {
