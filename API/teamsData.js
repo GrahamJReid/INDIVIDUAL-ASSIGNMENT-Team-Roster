@@ -26,9 +26,27 @@ const createTeams = (payload) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
+const getTeams = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
 
 export {
   updateTeams,
   createTeams,
+  getTeams,
 
 };
