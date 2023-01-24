@@ -25,7 +25,7 @@ function TeamCard({ teamObj, onUpdate }) {
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
-        <Link href={`/edit/${teamObj.firebaseKey}`} passHref>
+        <Link href={`/teams/edit/${teamObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisTeam} className="m-2">

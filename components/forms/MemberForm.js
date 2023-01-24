@@ -11,6 +11,7 @@ const initialState = {
   image: '',
   name: '',
   role: '',
+  team_id: '',
 };
 export default function MemberForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
@@ -34,7 +35,7 @@ export default function MemberForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateMembers(formInput)
-        .then(() => router.push('/team'));
+        .then(() => router.push(`/teams/${[obj.team_id]}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMembers(payload).then(({ name }) => {
@@ -91,21 +92,24 @@ export default function MemberForm({ obj }) {
             name="team_id"
             onChange={handleChange}
             className="mb-3"
-            value={obj.team_id}
-                                // FIXME: modify code to remove error
+            value={formInput.team_id} // FIXME: modify code to remove error
             required
           >
             <option value="">Select a Team</option>
             {
             allTeams.map((team) => (
+
               <option
                 key={team.firebaseKey}
                 value={team.firebaseKey}
               >
+
                 {team.team_name}
               </option>
+
             ))
           }
+
           </Form.Select>
         </FloatingLabel>
         <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Member</Button>

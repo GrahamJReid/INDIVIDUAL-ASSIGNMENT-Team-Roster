@@ -55,7 +55,7 @@ export default function TeamForm({ obj }) {
             type="text"
             placeholder="Enter Name"
             name="team_name"
-            value={formInput.name}
+            value={formInput.team_name}
             onChange={handleChange}
             required
           />
@@ -66,7 +66,7 @@ export default function TeamForm({ obj }) {
             type="url"
             placeholder="Enter an image url"
             name="team_image"
-            value={formInput.image}
+            value={formInput.team_image}
             onChange={handleChange}
             required
           />
@@ -80,8 +80,7 @@ export default function TeamForm({ obj }) {
 
 TeamForm.propTypes = {
   obj: PropTypes.shape({
-    name: PropTypes.string,
-    role: PropTypes.string,
+    team_name: PropTypes.string,
     team_image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
