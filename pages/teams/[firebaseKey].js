@@ -8,9 +8,7 @@ import MemberCard from '../../components/MemberCard';
 
 export default function ViewTeam() {
   const [teamDetails, setTeamDetails] = useState({});
-  const [teamMembers, setTeamMembers] = useState([]);
   const router = useRouter();
-
   // TODO: grab firebaseKey from url
   const { firebaseKey } = router.query;
 
@@ -18,12 +16,27 @@ export default function ViewTeam() {
   useEffect(() => {
     getSingleTeam(firebaseKey).then(setTeamDetails);
   }, [firebaseKey]);
+
+  const getFilteredItems = (query, teamMembers) => {
+    if (!query) {
+      return teamMembers;
+    }
+    return teamMembers.filter((member) => member.name.toLowerCase().includes(query.toLowerCase())
+    || member.role.toLowerCase().includes(query.toLowerCase()));
+  };
+  const [query, setQuery] = useState('');
+  const [teamMembers, setTeamMembers] = useState([]);
   useEffect(() => {
     getTeamMembers(firebaseKey).then(setTeamMembers);
   }, [firebaseKey]);
+  useEffect(() => {
+    getTeamMembers(firebaseKey).then(setTeamMembers);
+  }, [firebaseKey]);
+
   const displayTeamMembers = () => {
     getTeamMembers(firebaseKey).then(setTeamMembers);
   };
+  const filteredItems = getFilteredItems(query, teamMembers);
 
   return (
     <>
@@ -34,9 +47,11 @@ export default function ViewTeam() {
       <div className="d-flex flex-column">
         <img src={teamDetails.team_image} alt={teamDetails.team_name} style={{ width: '300px' }} />
       </div>
-      <div>{teamMembers.map((member) => (
-        <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={displayTeamMembers} />
-      ))}
+      <div> <input type="text" placeholder="Search Member Name" onChange={(e) => setQuery(e.target.value)} /></div>
+      <div>
+        {filteredItems.map((member) => (
+          <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={displayTeamMembers} />
+        ))}
       </div>
 
     </>
