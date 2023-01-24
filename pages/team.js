@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { getMembers } from '../API/memberData';
 import MemberCard from '../components/MemberCard';
@@ -26,11 +27,16 @@ export default function ShowMembers() {
   const filteredItems = getFilteredItems(query, members);
 
   return (
-    <><input type="text" placeholder="Search Member Name" onChange={(e) => setQuery(e.target.value)} />
+    <>
+      <Head>
+        <title>members</title>
+      </Head>
+      <input type="text" placeholder="Search Member Name" onChange={(e) => setQuery(e.target.value)} />
       <div>{filteredItems.map((member) => (
         <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={displayMembers} />
       ))}
       </div>
+
     </>
   );
 }
