@@ -71,7 +71,7 @@ export default function TeamForm({ obj }) {
             required
           />
         </FloatingLabel>
-        <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Member</Button>
+        <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team</Button>
       </Form>
     </>
 

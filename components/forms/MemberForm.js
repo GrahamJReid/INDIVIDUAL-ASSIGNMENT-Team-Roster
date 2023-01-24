@@ -41,7 +41,7 @@ export default function MemberForm({ obj }) {
       createMembers(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateMembers(patchPayload).then(() => {
-          router.push('/team');
+          router.push(`/teams/${[obj.team_id]}`);
         });
       });
     }
