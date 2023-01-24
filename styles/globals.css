@@ -131,3 +131,47 @@ body {
   color:white;
   opacity: 5; /* Firefox */
 }
+.team-card{
+  background: linear-gradient(orchid, orange);
+}
+.team-card-title{
+  color:white;
+  font-size:30px;
+  font-weight:800;
+}
+.team-view-button{
+  background-color:orchid;
+  border:white solid 2px;
+  margin-right:5%;
+}
+.team-view-button:hover{
+  background-color:white;
+  color:orchid;
+  border:white solid 2px;
+  margin-right:5%;
+}
+.team-edit-button{
+  background-color:hotpink;
+  border:white solid 2px;
+  margin-right:5%;
+}
+.team-edit-button:hover{
+  background-color:white;
+  color:orchid;
+  border:white solid 2px;
+  margin-right:5%;
+}
+.team-delete-button{
+  background-color:rgb(255, 152, 170);
+  border:white solid 2px;
+  margin-right:5%;
+}
+.team-delete-button:hover{
+  background-color:white;
+  color:orchid;
+  border:white solid 2px;
+  margin-right:5%;
+}
+.team-card-line{
+  color:white;
+}
