@@ -21,6 +21,11 @@ a {
 body {
   background: linear-gradient(blue, pink) no-repeat center center fixed;
 }
+.nav-bar-container{
+  display:flex;
+  justify-content:center;
+  justify-content:space-evenly
+}
 .navBar{
   background: linear-gradient(orchid, darkorchid);
   border-radius:100px;
@@ -28,4 +33,34 @@ body {
   box-shadow:1px 10px 2px hotpink;
   border:2px orange solid;
   margin-top:1%;
+  width:55%;
+}
+.nav-title{
+  color:white;
+  text-shadow: orange 2px 2px;
+  font-size:35px;
+}
+.nav-link{
+  color:orange;
+  font-size:32px;
+  text-shadow:1px 1px white;
+  margin-top:5px;
+  margin-bottom:5px;
+
+}
+.nav-bar-signout{
+  background: linear-gradient(orchid, darkorchid);
+  font-size:25px;
+  border:3px double orange;
+  text-shadow:1px 1px orange;
+  height:55px;
+  margin-top:7px;
+  margin-left:25px;
+}
+.nav-bar-signout:hover{
+  background: linear-gradient(orange);
+  font-size:25px;
+  border:3px double white;
+  text-shadow:1px 1px orchid;
+  color:orchid;
 }
