@@ -21,7 +21,7 @@ function TeamCard({ teamObj, onUpdate }) {
         <Card.Title>{teamObj.team_name}</Card.Title>
 
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
-        <Link href={`/${teamObj.firebaseKey}`} passHref>
+        <Link href={`/teams/${teamObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}

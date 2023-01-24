@@ -30,6 +30,7 @@ export default function ViewMember() {
             {memberDetails.name}
           </h5>
           <p>{memberDetails.role}</p>
+          <p>{memberDetails.team_id}</p>
 
           <hr />
         </div>

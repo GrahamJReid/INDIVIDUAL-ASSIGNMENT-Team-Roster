@@ -1,5 +1,5 @@
 import { deleteMembers } from './memberData';
-import { deleteTeams, getTeamMembers } from './teamsData';
+import { deleteTeams, getSingleTeam, getTeamMembers } from './teamsData';
 
 const deleteTeamsAndMembers = (firebaseKey) => new Promise((resolve, reject) => {
   getTeamMembers(firebaseKey).then((authorBooksArray) => {
@@ -10,4 +10,18 @@ const deleteTeamsAndMembers = (firebaseKey) => new Promise((resolve, reject) => 
     });
   }).catch(reject);
 });
-export default deleteTeamsAndMembers;
+const getTeamsAndMembers = (firebaseKey) => new Promise((resolve, reject) => {
+  getSingleTeam(firebaseKey).then((authorObject) => {
+    getTeamMembers(authorObject.firebaseKey).then((booksArray) => {
+      const authorAndBooks = {
+        ...authorObject, booksArray,
+      };
+      resolve(Object.values(authorAndBooks));
+    });
+  }).catch(reject);
+});
+
+export {
+  deleteTeamsAndMembers,
+  getTeamsAndMembers,
+};

@@ -91,7 +91,8 @@ export default function MemberForm({ obj }) {
             name="team_id"
             onChange={handleChange}
             className="mb-3"
-            value={obj.team_id} // FIXME: modify code to remove error
+            value={obj.team_id}
+                                // FIXME: modify code to remove error
             required
           >
             <option value="">Select a Team</option>

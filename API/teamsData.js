@@ -65,6 +65,17 @@ const deleteTeams = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve((data)))
     .catch(reject);
 });
+const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve((data)))
+    .catch(reject);
+});
 
 export {
   updateTeams,
@@ -72,5 +83,6 @@ export {
   getTeams,
   getTeamMembers,
   deleteTeams,
+  getSingleTeam,
 
 };
