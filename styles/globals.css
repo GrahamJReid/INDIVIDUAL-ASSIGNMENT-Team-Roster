@@ -38,7 +38,7 @@ body {
 .nav-title{
   color:white;
   text-shadow: orange 2px 2px;
-  font-size:35px;
+  font-size:39px;
 }
 .nav-link{
   color:orange;
@@ -60,6 +60,52 @@ body {
 .nav-bar-signout:hover{
   background: linear-gradient(orange);
   font-size:25px;
+  border:3px double white;
+  text-shadow:1px 1px orchid;
+  color:orchid;
+}
+.home-content-container{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-top:25%;
+  width:75%;
+  margin-left:15%;
+  border:solid 3px orange;
+  border-radius:25px;
+  padding:40px;
+  background: linear-gradient(orchid, darkorchid);
+  box-shadow:2px 10px 0px hotpink;
+}
+.home-title{
+  color:white;
+  font-size:75px;
+  text-shadow: orange 2px 5px;
+  font-weight:900;
+}
+.home-line1{
+  color:orange;
+  font-weight:bold;
+  width:600px;
+}
+.home-line2{
+  color:orange;
+  font-weight:bolder;
+  width:750px;
+}
+.home-line3{
+  color:orange;
+  font-weight:bold;
+}
+.home-signout{
+  background: linear-gradient(orchid, darkorchid);
+  font-size:35px;
+  border:3px double orange;
+  text-shadow:1px 1px orange;
+}
+.home-signout:hover{
+  background: linear-gradient(orange);
+  font-size:35px;
   border:3px double white;
   text-shadow:1px 1px orchid;
   color:orchid;
