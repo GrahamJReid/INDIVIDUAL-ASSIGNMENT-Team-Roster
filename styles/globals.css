@@ -110,3 +110,24 @@ body {
   text-shadow:1px 1px orchid;
   color:orchid;
 }
+.teams-searchBar{
+  width:50%;
+  margin-left:25%;
+  margin-bottom:5%;
+  font-size:30px;
+  border:5px solid orange;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:2px 8px 0px hotpink;
+  color: whitesmoke;
+  background: linear-gradient(orchid, darkorchid);
+}
+.teams-content-container{
+
+  display:flex;
+  justify-content:center;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:white;
+  opacity: 5; /* Firefox */
+}

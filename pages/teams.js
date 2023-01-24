@@ -30,10 +30,12 @@ export default function ShowTeams() {
       <Head>
         <title>Teams</title>
       </Head>
-      <input type="text" placeholder="Search Team Name" onChange={(e) => setQuery(e.target.value)} />
-      <div>{filteredItems.map((team) => (
-        <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={displayTeams} />
-      ))}
+      <div>
+        <input className="teams-searchBar" type="text" placeholder="Search Team Name" onChange={(e) => setQuery(e.target.value)} />
+        <div className="teams-content-container">{filteredItems.map((team) => (
+          <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={displayTeams} />
+        ))}
+        </div>
       </div>
 
     </>
