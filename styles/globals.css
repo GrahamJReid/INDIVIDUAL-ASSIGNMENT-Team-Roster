@@ -19,5 +19,13 @@ a {
 }
 
 body {
-  background-color: grey;
+  background: linear-gradient(blue, pink) no-repeat center center fixed;
+}
+.navBar{
+  background: linear-gradient(orchid, darkorchid);
+  border-radius:100px;
+  margin-bottom:3%;
+  box-shadow:1px 10px 2px hotpink;
+  border:2px orange solid;
+  margin-top:1%;
 }
