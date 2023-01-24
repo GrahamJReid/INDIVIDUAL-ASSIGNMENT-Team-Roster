@@ -49,7 +49,7 @@ export default function MemberForm({ obj }) {
   return (
     <>
       <Head>
-        <title>Edit Member</title>
+        <title>Create/Edit Member</title>
       </Head>
 
       <Form onSubmit={handleSubmit}>

@@ -44,7 +44,7 @@ export default function TeamForm({ obj }) {
   return (
     <>
       <Head>
-        <title>Team</title>
+        <title>Create/Edit Team</title>
       </Head>
 
       <Form onSubmit={handleSubmit}>
