@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-import deleteTeamsAndMembers from '../API/mergedData';
+import { deleteTeamAndMembers } from '../API/mergedData';
 
 function TeamCard({ teamObj, onUpdate }) {
   // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
   // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE BOOKS
   const deleteThisTeam = () => {
     if (window.confirm(`Delete ${teamObj.team_name}?`)) {
-      deleteTeamsAndMembers(teamObj.firebaseKey).then(() => onUpdate());
+      deleteTeamAndMembers(teamObj.firebaseKey).then(() => onUpdate());
     }
   };
 
