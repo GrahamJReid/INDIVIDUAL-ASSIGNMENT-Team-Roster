@@ -1,4 +1,3 @@
-// import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getMembers } from '../API/memberData';
 import MemberCard from '../components/MemberCard';
@@ -8,15 +7,14 @@ const getFilteredItems = (query, members) => {
   if (!query) {
     return members;
   }
-  return members.filter((member) => member.name.toLowerCase().includes(query.toLowerCase()) || member.role.toLowerCase().includes(query.toLowerCase()));
+  return members.filter((member) => member.name.toLowerCase().includes(query.toLowerCase())
+  || member.role.toLowerCase().includes(query.toLowerCase()));
 };
 
 export default function ShowMembers() {
   const [members, setMembers] = useState([]);
   const [query, setQuery] = useState('');
-  // console.warn(query);
   const { user } = useAuth();
-  // const router = useRouter();
   const displayMembers = () => {
     getMembers(user.uid).then(setMembers);
   };
