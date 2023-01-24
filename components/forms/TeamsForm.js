@@ -82,7 +82,7 @@ TeamForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
     role: PropTypes.string,
-    image: PropTypes.string,
+    team_image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };
