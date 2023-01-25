@@ -6,6 +6,7 @@ import { getSingleMember } from '../API/memberData';
 
 export default function ViewMember() {
   const [memberDetails, setMemberDetails] = useState({});
+
   const router = useRouter();
 
   // TODO: grab firebaseKey from url
@@ -22,16 +23,14 @@ export default function ViewMember() {
         <title>View details for {memberDetails.name}</title>
       </Head>
       <div className="mt-5 d-flex flex-wrap">
-        <div className="d-flex flex-column">
-          <img src={memberDetails.image} alt={memberDetails.name} style={{ width: '300px' }} />
+        <div>
+          <img className="view-member-image" src={memberDetails.image} alt={memberDetails.name} />
         </div>
         <div className="text-white ms-5 details">
-          <h5>
+          <h5 className="view-member-name">
             {memberDetails.name}
           </h5>
-          <p>{memberDetails.role}</p>
-          <p>{memberDetails.team_id}</p>
-
+          <p> Role: {memberDetails.role}</p>
           <hr />
         </div>
       </div>
