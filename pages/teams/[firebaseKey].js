@@ -43,12 +43,12 @@ export default function ViewTeam() {
       <Head>
         <title>View details for {teamDetails.team_name}</title>
       </Head>
-      <h2>{teamDetails.team_name}</h2>
-      <div className="d-flex flex-column">
-        <img src={teamDetails.team_image} alt={teamDetails.team_name} style={{ width: '300px' }} />
+      <h2 className="team-view-details-title">{teamDetails.team_name}</h2>
+      <div className="team-image-container">
+        <img className="team-view-image" src={teamDetails.team_image} alt={teamDetails.team_name} />
       </div>
-      <div> <input type="text" placeholder="Search Member Name or Role" onChange={(e) => setQuery(e.target.value)} /></div>
-      <div>
+      <div className="team-view-searchbar-container"> <input className="team-view-searchbar" type="text" placeholder="Search Member Name or Role" onChange={(e) => setQuery(e.target.value)} /></div>
+      <div className="members-content-container">
         {filteredItems.map((member) => (
           <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={displayTeamMembers} />
         ))}

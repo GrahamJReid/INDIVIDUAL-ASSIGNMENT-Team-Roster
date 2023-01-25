@@ -15,20 +15,20 @@ function TeamCard({ teamObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card className="team-card" style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={teamObj.team_image} alt={teamObj.team_name} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{teamObj.team_name}</Card.Title>
-
+        <Card.Title className="team-card-title">{teamObj.team_name}</Card.Title>
+        <hr className="team-card-line" />
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/teams/${teamObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
+          <Button className="team-view-button">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         <Link href={`/teams/edit/${teamObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button className="team-edit-button">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisTeam} className="m-2">
+        <Button className="team-delete-button" onClick={deleteThisTeam}>
           DELETE
         </Button>
       </Card.Body>

@@ -53,50 +53,50 @@ export default function MemberForm({ obj }) {
       </Head>
 
       <Form onSubmit={handleSubmit}>
-        <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Member</h2>
+        <h2 className="member-form-title">{obj.firebaseKey ? 'Update' : 'Create'} Member</h2>
+        <div className="member-form-container">
+          <FloatingLabel controlId="floatingInput1" label="Name" className="mb-3">
+            <Form.Control
+              type="text"
+              placeholder="Enter Name"
+              name="name"
+              value={formInput.name}
+              onChange={handleChange}
+              required
+            />
+          </FloatingLabel>
+          <FloatingLabel controlId="floatingInput1" label="role" className="mb-3">
+            <Form.Control
+              type="text"
+              placeholder="Enter Role"
+              name="role"
+              value={formInput.role}
+              onChange={handleChange}
+              required
+            />
+          </FloatingLabel>
 
-        <FloatingLabel controlId="floatingInput1" label="Name" className="mb-3">
-          <Form.Control
-            type="text"
-            placeholder="Enter Name"
-            name="name"
-            value={formInput.name}
-            onChange={handleChange}
-            required
-          />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingInput1" label="role" className="mb-3">
-          <Form.Control
-            type="text"
-            placeholder="Enter Role"
-            name="role"
-            value={formInput.role}
-            onChange={handleChange}
-            required
-          />
-        </FloatingLabel>
-
-        <FloatingLabel controlId="floatingInput2" label="Image" className="mb-3">
-          <Form.Control
-            type="url"
-            placeholder="Enter an image url"
-            name="image"
-            value={formInput.image}
-            onChange={handleChange}
-            required
-          />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingSelect" label="Team">
-          <Form.Select
-            aria-label="Team"
-            name="team_id"
-            onChange={handleChange}
-            className="mb-3"
-            value={formInput.team_id} // FIXME: modify code to remove error
-            required
-          >
-            <option value="">Select a Team</option>
-            {
+          <FloatingLabel controlId="floatingInput2" label="Image" className="mb-3">
+            <Form.Control
+              type="url"
+              placeholder="Enter an image url"
+              name="image"
+              value={formInput.image}
+              onChange={handleChange}
+              required
+            />
+          </FloatingLabel>
+          <FloatingLabel controlId="floatingSelect" label="Team">
+            <Form.Select
+              aria-label="Team"
+              name="team_id"
+              onChange={handleChange}
+              className="mb-3"
+              value={formInput.team_id} // FIXME: modify code to remove error
+              required
+            >
+              <option value="">Select a Team</option>
+              {
             allTeams.map((team) => (
 
               <option
@@ -110,9 +110,10 @@ export default function MemberForm({ obj }) {
             ))
           }
 
-          </Form.Select>
-        </FloatingLabel>
-        <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Member</Button>
+            </Form.Select>
+          </FloatingLabel>
+        </div>
+        <Button className="member-form-submitbtn" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Member</Button>
       </Form>
     </>
 

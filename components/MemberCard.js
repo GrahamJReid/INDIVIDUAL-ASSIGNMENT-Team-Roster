@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { deleteMembers } from '../API/memberData';
+import { getSingleTeam } from '../API/teamsData';
 
 function MemberCard({ memberObj, onUpdate }) {
   // FOR DELETE, WE NEED TO REMOVE THE BOOK AND HAVE THE VIEW RERENDER,
@@ -13,22 +14,29 @@ function MemberCard({ memberObj, onUpdate }) {
       deleteMembers(memberObj.firebaseKey).then(() => onUpdate());
     }
   };
+  const [teamName, setTeamName] = useState({});
+  useEffect(() => {
+    getSingleTeam(memberObj.team_id).then(setTeamName);
+    console.warn(teamName);
+  }, [memberObj, teamName]);
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card className="team-card text-white" style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={memberObj.image} alt={memberObj.name} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{memberObj.name}</Card.Title>
+        <Card.Title className="team-card-title">{memberObj.name}</Card.Title>
         <p>Role: {memberObj.role}</p>
+        <p>Team: {teamName.team_name}</p>
+        <hr className="team-card-line" />
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/${memberObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
+          <Button className="team-view-button">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         <Link href={`/edit/${memberObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button className="team-edit-button">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisMember} className="m-2">
+        <Button className="team-delete-button" onClick={deleteThisMember}>
           DELETE
         </Button>
       </Card.Body>
@@ -42,6 +50,7 @@ MemberCard.propTypes = {
     role: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
+    team_id: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
