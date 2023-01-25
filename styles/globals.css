@@ -135,7 +135,7 @@ body {
 .team-card{
   background: linear-gradient(orchid, orange);
   box-shadow:2px 8px 0px hotpink;
-  border:solid 3px darkorange;
+  border:solid 4px darkorange;
 }
 .team-card-title{
   color:white;
@@ -174,5 +174,51 @@ body {
   border:white solid 2px;
 }
 .team-card-line{
+  color:white;
+}
+
+.team-form-title{
+  color:orange;
+  font-size:75px;
+  text-shadow:1px 2px orchid;
+  text-align:center;
+  margin-bottom:2%;
+}
+.team-form-submitbtn{
+  background: linear-gradient(orchid, darkorchid);
+  font-size:30px;
+  border:3px double orange;
+  text-shadow:1px 1px orange;
+  text-align:center;
+  margin-left:44%;
+}
+.team-form-submitbtn:hover{
+  background: linear-gradient(orange);
+  font-size:30px;
+  border:3px double white;
+  text-shadow:1px 1px orchid;
+  color:orchid;
+}
+.team-input-bar{
+  font-size:30px;
+  border:5px solid orange;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:2px 8px 0px hotpink;
+  color:white;
+  background: linear-gradient(orchid, darkorchid);
+  margin:25px;
+}
+.team-form-titlepropmt{
+  color:orange;
+  font-size:40px;
+  text-shadow:1px 2px orchid;
+  text-align:center;
+  
+}
+.form-control{
+  color:white;
+}
+.text-white{
   color:white;
 }

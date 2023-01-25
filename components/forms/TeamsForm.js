@@ -48,10 +48,11 @@ export default function TeamForm({ obj }) {
       </Head>
 
       <Form onSubmit={handleSubmit}>
-        <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Team</h2>
-
-        <FloatingLabel controlId="floatingInput1" label="Name" className="mb-3">
+        <h2 className="team-form-title">{obj.firebaseKey ? 'Update' : 'Create'} Team</h2>
+        <h3 className="team-form-titlepropmt">Enter Team Name</h3>
+        <FloatingLabel controlId="floatingInput1">
           <Form.Control
+            className="team-input-bar"
             type="text"
             placeholder="Enter Name"
             name="team_name"
@@ -60,18 +61,21 @@ export default function TeamForm({ obj }) {
             required
           />
         </FloatingLabel>
-
-        <FloatingLabel controlId="floatingInput2" label="Image" className="mb-3">
-          <Form.Control
-            type="url"
-            placeholder="Enter an image url"
-            name="team_image"
-            value={formInput.team_image}
-            onChange={handleChange}
-            required
-          />
-        </FloatingLabel>
-        <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team</Button>
+        <h3 className="team-form-titlepropmt">Enter Team Image URL</h3>
+        <div className="text-white">
+          <FloatingLabel controlId="floatingInput2">
+            <Form.Control
+              className="team-input-bar"
+              type="url"
+              placeholder="Enter an image url"
+              name="team_image"
+              value={formInput.team_image}
+              onChange={handleChange}
+              required
+            />
+          </FloatingLabel>
+        </div>
+        <Button className="team-form-submitbtn" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team</Button>
       </Form>
     </>
 
