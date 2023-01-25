@@ -49,21 +49,19 @@ export default function TeamForm({ obj }) {
 
       <Form onSubmit={handleSubmit}>
         <h2 className="team-form-title">{obj.firebaseKey ? 'Update' : 'Create'} Team</h2>
-        <h3 className="team-form-titlepropmt">Enter Team Name</h3>
-        <FloatingLabel controlId="floatingInput1">
-          <Form.Control
-            className="team-input-bar"
-            type="text"
-            placeholder="Enter Name"
-            name="team_name"
-            value={formInput.team_name}
-            onChange={handleChange}
-            required
-          />
-        </FloatingLabel>
-        <h3 className="team-form-titlepropmt">Enter Team Image URL</h3>
-        <div className="text-white">
-          <FloatingLabel controlId="floatingInput2">
+        <div className="team-form-container">
+          <FloatingLabel controlId="floatingInput1" label="Enter Team Name">
+            <Form.Control
+              className="team-input-bar"
+              type="text"
+              placeholder="Enter Name"
+              name="team_name"
+              value={formInput.team_name}
+              onChange={handleChange}
+              required
+            />
+          </FloatingLabel>
+          <FloatingLabel controlId="floatingInput2" label="Enter Team Image URL">
             <Form.Control
               className="team-input-bar"
               type="url"
