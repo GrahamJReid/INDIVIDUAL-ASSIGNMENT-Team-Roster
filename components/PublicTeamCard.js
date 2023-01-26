@@ -29,6 +29,7 @@ PublicTeamCard.propTypes = {
   teamObj: PropTypes.shape({
     team_name: PropTypes.string,
     team_image: PropTypes.string,
+    creator_name: PropTypes.string,
     firebaseKey: PropTypes.string,
     public: PropTypes.bool,
   }).isRequired,

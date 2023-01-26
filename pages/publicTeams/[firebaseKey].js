@@ -43,6 +43,7 @@ export default function ViewPublicTeam() {
       <div className="team-image-container">
         <img className="team-view-image" src={teamDetails.team_image} alt={teamDetails.team_name} />
       </div>
+      <div>Created by: {teamDetails.creator_name}</div>
       <div className="team-view-searchbar-container"> <input className="team-view-searchbar" type="text" placeholder="Search Member Name or Role" onChange={(e) => setQuery(e.target.value)} /></div>
       <div className="members-content-container">
         {filteredItems.map((member) => (
