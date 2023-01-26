@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
-import { getTeams } from '../API/teamsData';
-import TeamCard from '../components/TeamCard';
+import { getPublicTeams, getTeams } from '../API/teamsData';
+import PublicTeamCard from '../components/PublicTeamCard';
 import { useAuth } from '../utils/context/authContext';
 
 const getFilteredItems = (query, teams) => {
@@ -11,16 +11,14 @@ const getFilteredItems = (query, teams) => {
   return teams.filter((team) => team.team_name.toLowerCase().includes(query.toLowerCase()));
 };
 
-export default function ShowTeams() {
+export default function ShowPublicTeams() {
   const [teams, setTeams] = useState([]);
   const [query, setQuery] = useState('');
   const { user } = useAuth();
-  const displayTeams = () => {
-    getTeams(user.uid).then(setTeams);
-  };
 
   useEffect(() => {
     getTeams(user.uid).then(setTeams);
+    getPublicTeams(user.uid).then(setTeams);
   }, [user]);
 
   const filteredItems = getFilteredItems(query, teams);
@@ -33,7 +31,7 @@ export default function ShowTeams() {
       <div>
         <input className="teams-searchBar" type="text" placeholder="Search Team Name" onChange={(e) => setQuery(e.target.value)} />
         <div className="teams-content-container">{filteredItems.map((team) => (
-          <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={displayTeams} />
+          <PublicTeamCard key={team.firebaseKey} teamObj={team} />
         ))}
         </div>
       </div>

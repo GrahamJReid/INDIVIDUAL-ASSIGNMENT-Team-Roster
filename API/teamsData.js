@@ -85,7 +85,21 @@ const getPublicTeams = () => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const onSale = Object.values(data).filter((item) => item.public);
+      const onSale = Object.values(data).filter((item) => item.public === true);
+      resolve(onSale);
+    })
+    .catch(reject);
+});
+const getPrivateTeams = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const onSale = Object.values(data).filter((item) => item.public === false);
       resolve(onSale);
     })
     .catch(reject);
@@ -99,5 +113,6 @@ export {
   deleteTeams,
   getSingleTeam,
   getPublicTeams,
+  getPrivateTeams,
 
 };
