@@ -17,7 +17,6 @@ function MemberCard({ memberObj, onUpdate }) {
   const [teamName, setTeamName] = useState({});
   useEffect(() => {
     getSingleTeam(memberObj.team_id).then(setTeamName);
-    console.warn(teamName);
   }, [memberObj, teamName]);
 
   return (
