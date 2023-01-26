@@ -19,6 +19,7 @@ function TeamCard({ teamObj, onUpdate }) {
       <Card.Img variant="top" src={teamObj.team_image} alt={teamObj.team_name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title className="team-card-title">{teamObj.team_name}</Card.Title>
+        <p className="card-text bold">{teamObj.public === true ? 'Public' : 'Private' }</p>
         <hr className="team-card-line" />
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/teams/${teamObj.firebaseKey}`} passHref>
@@ -41,6 +42,7 @@ TeamCard.propTypes = {
     team_name: PropTypes.string,
     team_image: PropTypes.string,
     firebaseKey: PropTypes.string,
+    public: PropTypes.bool,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
