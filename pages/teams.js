@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
-import { getTeams } from '../API/teamsData';
+import { getPublicTeams, getTeams } from '../API/teamsData';
 import TeamCard from '../components/TeamCard';
 import { useAuth } from '../utils/context/authContext';
 
@@ -20,8 +20,8 @@ export default function ShowTeams() {
   };
 
   useEffect(() => {
-    getTeams(user.uid).then(setTeams);
-  }, [user.uid]);
+    getPublicTeams().then(setTeams);
+  }, []);
 
   const filteredItems = getFilteredItems(query, teams);
 
