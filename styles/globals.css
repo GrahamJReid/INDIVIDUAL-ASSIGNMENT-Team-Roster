@@ -301,3 +301,51 @@ body {
   font-weight:800;
   font-size:30px;
 }
+.signin-content-container{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+  justify-content:space-evenly;
+  border:solid 20px orange;
+  box-shadow:10px 20px 0px hotpink;
+  border-radius:25px;
+  width:40%;
+  margin-left:30%;
+  margin-top:5%;
+}
+.signin-title{
+  color:orange;
+  font-size:150px;
+  text-shadow:1px 10px hotpink;
+  text-align:center;
+  margin-bottom:10%;
+}
+.signin-btn{
+
+  background: linear-gradient(orchid, darkorchid);
+  font-size:30px;
+  border:3px solid orange;
+  text-shadow:1px 1px orange;
+  text-align:center;
+  margin-bottom:5%;
+  margin-top:5%;
+  width:65%;
+  margin-left:18%;
+}
+.signin-btn:hover{
+  background: linear-gradient(orange);
+  font-size:30px;
+  border:3px solid white;
+  text-shadow:1px 1px orchid;
+  color:orchid;
+}
+.signin-img{
+  width:55%;
+  margin-left:22%;
+  border:solid orange 15px;
+  box-shadow:10px 20px 0px hotpink;
+  border-radius:25px;
+  padding:20px;
+  background: linear-gradient(orchid, darkorchid);
+}
