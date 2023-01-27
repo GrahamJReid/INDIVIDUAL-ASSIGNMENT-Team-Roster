@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
@@ -46,6 +47,7 @@ export default function TeamForm({ obj }) {
     <>
       <Head>
         <title>Create/Edit Team</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet" />
       </Head>
 
       <Form onSubmit={handleSubmit}>
@@ -74,7 +76,7 @@ export default function TeamForm({ obj }) {
             />
           </FloatingLabel>
           <Form.Check
-            className="text-white mb-3"
+            className="public-switch"
             type="switch"
             id="public"
             name="public"

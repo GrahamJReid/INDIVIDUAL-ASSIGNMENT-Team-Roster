@@ -29,7 +29,7 @@ export default function ShowPublicTeams() {
         <title>Teams</title>
       </Head>
       <div>
-        <input className="teams-searchBar" type="text" placeholder="Search Team Name" onChange={(e) => setQuery(e.target.value)} />
+        <input className="teams-searchBar" type="text" placeholder="Search Public Teams" onChange={(e) => setQuery(e.target.value)} />
         <div className="teams-content-container">{filteredItems.map((team) => (
           <PublicTeamCard key={team.firebaseKey} teamObj={team} />
         ))}
