@@ -1,5 +1,7 @@
 import { deleteMembers } from './memberData';
-import { deleteTeams, getSingleTeam, getTeamMembers } from './teamsData';
+import {
+  deleteTeams, getPrivateTeams, getPublicTeams, getSingleTeam, getTeamMembers,
+} from './teamsData';
 
 const deleteTeamAndMembers = (firebaseKey) => new Promise((resolve, reject) => {
   getTeamMembers(firebaseKey).then((authorBooksArray) => {
@@ -20,8 +22,22 @@ const getTeamsAndMembers = (firebaseKey) => new Promise((resolve, reject) => {
     });
   }).catch(reject);
 });
+const getPublicAndPrivateTeams = (user) => new Promise((resolve, reject) => {
+  getPublicTeams().then((teamObject) => {
+    getPrivateTeams(user.uid).then((membersArray) => {
+      console.warn(user.uid);
+      Promise.all().then(() => {
+        const publicandprivate = [
+          ...teamObject, membersArray,
+        ];
+        resolve(Object.values(publicandprivate));
+      });
+    }).catch(reject);
+  });
+});
 
 export {
   deleteTeamAndMembers,
   getTeamsAndMembers,
+  getPublicAndPrivateTeams,
 };

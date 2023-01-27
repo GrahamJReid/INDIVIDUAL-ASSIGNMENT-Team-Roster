@@ -9,6 +9,7 @@ import { createTeams, updateTeams } from '../../API/teamsData';
 const initialState = {
   team_image: '',
   team_name: '',
+  public: false,
 };
 export default function TeamForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
@@ -32,7 +33,7 @@ export default function TeamForm({ obj }) {
       updateTeams(formInput)
         .then(() => router.push('/teams'));
     } else {
-      const payload = { ...formInput, uid: user.uid };
+      const payload = { ...formInput, uid: user.uid, creator_name: user.displayName };
       createTeams(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateTeams(patchPayload).then(() => {
@@ -72,6 +73,21 @@ export default function TeamForm({ obj }) {
               required
             />
           </FloatingLabel>
+          <Form.Check
+            className="text-white mb-3"
+            type="switch"
+            id="public"
+            name="public"
+            label="public"
+            checked={formInput.public}
+            onChange={(e) => {
+              setFormInput((prevState) => ({
+                ...prevState,
+                public: e.target.checked,
+              }));
+            }}
+          />
+
         </div>
         <Button className="team-form-submitbtn" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team</Button>
       </Form>
@@ -85,6 +101,7 @@ TeamForm.propTypes = {
     team_name: PropTypes.string,
     team_image: PropTypes.string,
     firebaseKey: PropTypes.string,
+    public: PropTypes.bool,
   }),
 };
 

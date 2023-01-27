@@ -76,6 +76,34 @@ const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve((data)))
     .catch(reject);
 });
+const getPublicTeams = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const onSale = Object.values(data).filter((item) => item.public === true);
+      resolve(onSale);
+    })
+    .catch(reject);
+});
+const getPrivateTeams = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const onSale = Object.values(data).filter((item) => item.public === false);
+      resolve(onSale);
+    })
+    .catch(reject);
+});
 
 export {
   updateTeams,
@@ -84,5 +112,7 @@ export {
   getTeamMembers,
   deleteTeams,
   getSingleTeam,
+  getPublicTeams,
+  getPrivateTeams,
 
 };
