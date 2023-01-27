@@ -39,32 +39,52 @@ body {
 }
 .nav-title{
   color:white;
-  text-shadow: orange 2px 2px;
+  text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   font-size:60px;
+  margin-right:25px;
 }
 .nav-link{
-  color:orange;
-  font-size:35px;
+  color:white;
+  font-size:27px;
   text-shadow:1px 1px white;
   margin-top:5px;
   margin-bottom:5px;
-
+  margin-left:5px;
+  margin-right:10px;
+  border:solid silver 2px;
+  border-radius:25px;
+  background: linear-gradient(orange,darkorange);
+}
+.nav-link:hover{
+  color:white;
+  font-size:27px;
+  text-shadow:1px 1px white;
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:10px;
+  border:solid silver 2px;
+  border-radius:25px;
+  background: linear-gradient(darkorchid,orchid);
 }
 .nav-bar-signout{
   background: linear-gradient(orchid, darkorchid);
-  font-size:25px;
+  font-size:30px;
   border:3px double orange;
+  border-radius:25px;
   text-shadow:1px 1px orange;
-  height:55px;
+  height:120px;
   margin-top:10px;
-  margin-left:150px;
+  margin-left:100px;
+  padding:15px;
 }
 .nav-bar-signout:hover{
-  background: linear-gradient(orange);
-  font-size:25px;
+  background: linear-gradient(darkorchid,orchid);
+  font-size:30px;
   border:3px double white;
   text-shadow:1px 1px orchid;
-  color:orchid;
+  color:orange;
+  height:120px;
 }
 .home-content-container{
   display:flex;
@@ -82,7 +102,7 @@ body {
 .home-title{
   color:white;
   font-size:75px;
-  text-shadow: orange 2px 5px;
+  text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   font-weight:900;
 }
 .home-line1{
@@ -181,10 +201,15 @@ body {
 
 .team-form-title{
   color:orange;
-  font-size:75px;
-  text-shadow:1px 2px orchid;
+  font-size:125px;
+  text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   text-align:center;
   margin-bottom:2%;
+}
+.public-switch{
+  font-size:30px;
+  color:orange;
+
 }
 .team-form-submitbtn{
   background: linear-gradient(orchid, darkorchid);
@@ -241,15 +266,15 @@ body {
 }
 .member-form-title{
   color:orange;
-  font-size:75px;
-  text-shadow:1px 2px orchid;
+  font-size:125px;
+  text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   text-align:center;
   margin-bottom:2%;
 }
 .team-view-details-title{
   color:orange;
-  font-size:100px;
-  text-shadow:2px 5px hotpink;
+  font-size:125px;
+  text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   text-align:center;
   margin-bottom:2%;
 }
@@ -316,10 +341,11 @@ body {
 }
 .signin-title{
   color:orange;
-  font-size:150px;
-  text-shadow:1px 10px hotpink;
+  font-size:175px;
+  text-shadow:5px 10px hotpink,9px 15px darkorchid,9px 20px black;
   text-align:center;
-  margin-bottom:10%;
+  margin-bottom:8%;
+  font-family: 'Pirata One', cursive;
 }
 .signin-btn{
 
@@ -348,4 +374,21 @@ body {
   border-radius:25px;
   padding:20px;
   background: linear-gradient(orchid, darkorchid);
+}
+.card-public{
+  color:white;
+  font: weight 400px;
+  font-size:25px;
+border:solid 2px hotpink;
+border-radius:25px;
+text-align:center;
+background: linear-gradient(darkorchid,orchid);
+width:40%;
+}
+.creator-details{
+  color:orange;
+  font-size:75px;
+  text-shadow:2px 5px hotpink,2px 10px darkOrchid;
+  text-align:center;
+  margin-bottom:2%;
 }

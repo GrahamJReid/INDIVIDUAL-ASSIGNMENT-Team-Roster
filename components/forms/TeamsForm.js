@@ -74,7 +74,7 @@ export default function TeamForm({ obj }) {
             />
           </FloatingLabel>
           <Form.Check
-            className="text-white mb-3"
+            className="public-switch"
             type="switch"
             id="public"
             name="public"

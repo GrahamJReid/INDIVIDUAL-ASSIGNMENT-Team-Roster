@@ -13,7 +13,7 @@ function PublicTeamCard({ teamObj }) {
       <Card.Img variant="top" src={teamObj.team_image} alt={teamObj.team_name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title className="team-card-title">{teamObj.team_name}</Card.Title>
-        <p className="card-text bold">Public</p>
+        <p className="card-public">Public</p>
         <hr className="team-card-line" />
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`publicTeams/${teamObj.firebaseKey}`} passHref>
