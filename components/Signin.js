@@ -10,7 +10,7 @@ function Signin() {
     <>
       <Head>
         <title>Sign In Roster</title>
-        <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet" />
       </Head>
       <div
         className="signin-content-container"
