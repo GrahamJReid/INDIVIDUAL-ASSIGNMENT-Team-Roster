@@ -50,9 +50,9 @@ a {
   }
 }
 body {
-  background: linear-gradient(45deg, orange,darkorchid,blue,orchid,orange,hotpink,orchid)fixed;
+  background: linear-gradient(45deg,orchid, orange,darkorchid,blue,orchid,orange,orchid,darkOrchid)fixed;
   background-size:600%;
-  animation: bg-animation 15s infinite alternate;
+  animation: bg-animation 15s linear infinite alternate;
  
 }
 .nav-bar-container{
@@ -139,7 +139,7 @@ body {
   display:flex;
   flex-direction:column;
   justify-content:center;
-  margin-top:15%;
+  margin-top:5%;
   width:75%;
   margin-left:15%;
   margin: bottom 50px;
