@@ -36,14 +36,12 @@ export default function MemberForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateMembers(formInput)
-        .then(() => router.push(`/teams/${[obj.team_id]}`));
+        .then(() => router.push(`/teams/${obj.team_id}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMembers(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
-        updateMembers(patchPayload).then(() => {
-          router.push(`/teams/${[obj.team_id]}`);
-        });
+        updateMembers(patchPayload).then(() => router.push(`/teams/${obj.team_id}`));
       });
     }
   };

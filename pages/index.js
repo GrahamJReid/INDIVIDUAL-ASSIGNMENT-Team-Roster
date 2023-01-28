@@ -23,10 +23,11 @@ function Home() {
       <Head>
         <title>Roster Home {user.displayName}</title>
         <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Concert+One&display=swap" rel="stylesheet" />
+
       </Head>
       <div className="home-content-container">
         <img className="home-img" src={user.photoURL} alt="self" height="200" width="200" />
-        <h1 className="home-title">Hello {user.displayName}! </h1>
+        <h1 className="home-title">{user.displayName} </h1>
         <h2 className="home-title">Active Teams: {count}</h2>
         <p className="home-timestamp">Email: {user.email}</p>
         <h3 className="home-timestamp"> Login Time Stamp: {user.metadata.lastSignInTime}</h3>

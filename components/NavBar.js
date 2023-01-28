@@ -19,9 +19,9 @@ export default function NavBar() {
       <div className="nav-bar-container">
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navBar">
           <Container>
-            <Link passHref href="/">
+            <div className="rotate-nav-title">
               <img className="nav-title" src="https://cdn-icons-png.flaticon.com/512/1427/1427803.png" alt="teamwork" />
-            </Link>
+            </div>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">

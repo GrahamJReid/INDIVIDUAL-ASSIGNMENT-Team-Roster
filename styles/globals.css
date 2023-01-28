@@ -17,9 +17,51 @@ a {
 * {
   box-sizing: border-box;
 }
-
+@keyframes slideInTop {
+  from{
+    transform:translateY(-1000px);
+  }
+  to{
+    transform:translateY(0);
+  }
+}
+@keyframes slideInBottom {
+  from{
+    transform:translateY(1500px);
+  }
+  to{
+    transform:translateY(0);
+  }
+}
+@keyframes slideInRight {
+  from{
+    transform:translateX(1500px);
+  }
+  to{
+    transform:translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  from{
+    transform:translateX(-1500px);
+  }
+  to{
+    transform:translateX(0);
+  }
+}
+@keyframes bg-animation {
+  0%{
+    background-position:left;
+  }
+  100%{
+    background-position:right;
+  }
+}
 body {
-  background: linear-gradient(blue, pink) no-repeat center center fixed;
+  background: linear-gradient(45deg,orchid, orange,darkorchid,blue,orchid,orange,orchid,darkOrchid)fixed;
+  background-size:600%;
+  animation: bg-animation 15s linear infinite alternate;
+ 
 }
 .nav-bar-container{
   display:flex;
@@ -36,6 +78,8 @@ body {
   width:60%;
   display:flex;
   justify-content:space-evenly;
+  animation-name: slideInTop;
+  animation-duration:1s;
 }
 .nav-title{
   color:orange;
@@ -103,7 +147,7 @@ body {
   display:flex;
   flex-direction:column;
   justify-content:center;
-  margin-top:15%;
+  margin-top:5%;
   width:75%;
   margin-left:15%;
   margin: bottom 50px;
@@ -112,6 +156,8 @@ body {
   padding:40px;
   background: linear-gradient(orchid, darkorchid);
   box-shadow:2px 10px 0px hotpink;
+  animation-name: slideInBottom;
+  animation-duration:1s;
 
 }
 .home-title{
@@ -131,8 +177,8 @@ body {
   margin-left:38%;
 }
 .home-timestamp{
-  color:orange;
-  font-size:25px;
+  color:white;
+  font-size:27px;
   text-align:center;
   font-family: 'Bungee Shade', cursive;
   margin-top:5px;
@@ -176,12 +222,17 @@ body {
   box-shadow:2px 8px 0px hotpink;
   color: whitesmoke;
   background: linear-gradient(orchid, darkorchid);
+  font-family: 'Bungee Shade', cursive;
+  animation-name: slideInLeft;
+  animation-duration:1s;
 }
 .teams-content-container{
 
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
+  animation-name: slideInRight;
+  animation-duration:1s;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color:white;
@@ -233,7 +284,7 @@ body {
 }
 
 .team-form-title{
-  color:orange;
+  color:white;
   font-size:125px;
   text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   text-align:center;
@@ -243,7 +294,7 @@ body {
 }
 .public-switch{
   font-size:30px;
-  color:orange;
+  color:white;
 
 }
 .team-form-submitbtn{
@@ -255,6 +306,8 @@ body {
   margin-left:38%;
   margin-top:5%;
   font-family: 'Bungee Shade', cursive;
+  animation-name: slideInTop;
+  animation-duration:1s;
 }
 .team-form-submitbtn:hover{
   background: linear-gradient(orange);
@@ -271,6 +324,8 @@ body {
   border-radius:25px;
   padding:15px;
   box-shadow:20px 20px 2px hotpink;
+  animation-name: slideInBottom;
+  animation-duration:1s;
 }
 .team-form-container{
   border:15px orange solid;
@@ -283,6 +338,8 @@ body {
   border-radius:25px;
   padding:15px;
   box-shadow:20px 20px 2px hotpink;
+  animation-name: slideInBottom;
+  animation-duration:1s;
 }
 .member-form-submitbtn{
   background: linear-gradient(orchid, darkorchid);
@@ -293,6 +350,8 @@ body {
   margin-left:38%;
   margin-top:5%;
   font-family: 'Bungee Shade', cursive;
+  animation-name: slideInTop;
+  animation-duration:1s;
 }
 .member-form-submitbtn:hover{
   background: linear-gradient(orange);
@@ -302,7 +361,7 @@ body {
   color:orchid;
 }
 .member-form-title{
-  color:orange;
+  color:white;
   font-size:125px;
   text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   text-align:center;
@@ -311,7 +370,7 @@ body {
 
 }
 .team-view-details-title{
-  color:orange;
+  color:white;
   font-size:125px;
   text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   text-align:center;
@@ -343,6 +402,7 @@ body {
   box-shadow:2px 8px 0px hotpink;
   color: whitesmoke;
   background: linear-gradient(orchid, darkorchid);
+  font-family: 'Bungee Shade', cursive;
 }
 .members-content-container{
   display:flex;
@@ -377,10 +437,12 @@ body {
   width:40%;
   margin-left:30%;
   margin-top:5%;
+  animation-name: slideInTop;
+  animation-duration:2s;
 }
 .signin-title{
-  color:orange;
-  font-size:150px;
+  color:white;
+  font-size:650%;
   text-shadow:5px 10px hotpink,9px 15px darkorchid,9px 20px black;
   text-align:center;
   margin-bottom:8%;
@@ -413,7 +475,7 @@ body {
   box-shadow:10px 20px 0px hotpink;
   border-radius:25px;
   padding:20px;
-  background: linear-gradient(orchid, darkorchid);
+  /* background: linear-gradient(orchid, darkorchid); */
 }
 .card-public{
   color:white;
@@ -426,7 +488,7 @@ background: linear-gradient(darkorchid,orchid);
 width:40%;
 }
 .creator-details{
-  color:orange;
+  color:white;
   font-size:75px;
   text-shadow:2px 5px hotpink,2px 10px darkOrchid;
   text-align:center;
