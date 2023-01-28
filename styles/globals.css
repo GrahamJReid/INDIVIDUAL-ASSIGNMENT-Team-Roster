@@ -41,6 +41,14 @@ a {
     transform:translateX(0);
   }
 }
+@keyframes slideInLeft {
+  from{
+    transform:translateX(-1500px);
+  }
+  to{
+    transform:translateX(0);
+  }
+}
 @keyframes bg-animation {
   0%{
     background-position:left;
@@ -215,6 +223,8 @@ body {
   color: whitesmoke;
   background: linear-gradient(orchid, darkorchid);
   font-family: 'Bungee Shade', cursive;
+  animation-name: slideInLeft;
+  animation-duration:1s;
 }
 .teams-content-container{
 
@@ -465,7 +475,7 @@ body {
   box-shadow:10px 20px 0px hotpink;
   border-radius:25px;
   padding:20px;
-  background: linear-gradient(orchid, darkorchid);
+  /* background: linear-gradient(orchid, darkorchid); */
 }
 .card-public{
   color:white;
