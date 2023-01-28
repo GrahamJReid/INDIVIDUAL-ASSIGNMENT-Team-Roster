@@ -53,7 +53,6 @@ export default function ViewTeam() {
           <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={displayTeamMembers} />
         ))}
       </div>
-
     </>
   );
 }
